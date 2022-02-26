@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.collections.FXCollections?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="GUI.Controllers.NewEvent"
+            prefHeight="550.0" prefWidth="800.0">
+    <top>
+        <HBox alignment="TOP_RIGHT" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #9ebf99#9ebf99;" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="600.0" style="-fx-background-color: #9ebf99;">
+                    <children>
+                        <Pane prefHeight="55.0" prefWidth="51.0" />
+                        <Label prefHeight="44.0" prefWidth="200.0" text="New Event" textFill="#65441b">
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToHome" prefHeight="55.0" prefWidth="100.0" style="-fx-background-color: #9ebf99; -fx-background-radius: 0;" text="Return" textFill="#65441b">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveEvent" prefHeight="55.0" prefWidth="100.0" style="-fx-background-color: #9ebf99; -fx-background-radius: 0;" text="Save" textFill="#65441b">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <BorderPane fx:id="borderPane" prefWidth="800" prefHeight="500">
+            <top>
+                <GridPane fx:id = "addEventPane" prefHeight="100" prefWidth="800" >
+                    <Label text="Event Name:"
+                           GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+                    <TextField fx:id="name"
+                            GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                    <Label text="Date: "
+                           GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+
+                    <TextField fx:id="date"
+                            GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+                    <Label text="Location: "
+                           GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+
+                    <TextField fx:id="loc"
+                            GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+
+                    <Label text="Start Point: "
+                           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+                    <TextField fx:id="startPoint"
+                            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                    <ComboBox fx:id = "dropdown" value="Choose Activity" GridPane.columnIndex="3" GridPane.rowIndex="1" onAction="#showActivity">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Biking"/>
+                                <String fx:value="Camping"/>
+                                <String fx:value="Skiing"/>
+                                <String fx:value="Hiking"/>
+                                <String fx:value="Climbing"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </GridPane>
+            </top>
+            <bottom>
+                <GridPane fx:id = "activityPane" prefHeight="400" prefWidth="800" >
+                </GridPane>
+            </bottom>
+        </BorderPane>
+    </center>
+
+
+</BorderPane>
